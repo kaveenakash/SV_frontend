@@ -17,7 +17,8 @@ import IconButton from "@material-ui/core/IconButton";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
-
+import { GoogleLogin } from "react-google-login";
+import axios from "axios";
 const Header = (props) => {
   const classes = useStyles();
   return (
@@ -41,16 +42,26 @@ const Header = (props) => {
               />
             </Button>
           </Typography>
-
-          <Button
-            variant="contained"
-            size="small"
-            color="secondary"
-            className={classes.button}
-            startIcon={<ExitToAppIcon />}
-          >
-            Sign in
-          </Button>
+          <GoogleLogin
+            render={(renderProps) => (
+                <Button
+                onClick={renderProps.onClick}
+                variant="contained"
+                size="small"
+                color="secondary"
+                className={classes.button}
+                startIcon={<ExitToAppIcon />}
+              >
+                Sign in
+              </Button>
+            )}
+            clientId="361577374258-c45jn6o7muma9cj62ptm5r7ivvtdfa8k.apps.googleusercontent.com"
+            buttonText="Login"
+            onSuccess={props.responseSuccessGoogle}
+            onFailure={props.responseErrorGoogle}
+            cookiePolicy={"single_host_origin"}
+          />
+         
         </Toolbar>
       </AppBar>
     </React.Fragment>
