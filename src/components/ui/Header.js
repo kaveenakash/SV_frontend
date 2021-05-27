@@ -64,6 +64,13 @@ const Header = (props) => {
          
         </Toolbar>
       </AppBar>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <Button onClick={props.protect} variant="contained">Click Here</Button>
+      <Typography variant="h1">{props.err}</Typography>
     </React.Fragment>
   );
 };

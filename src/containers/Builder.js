@@ -73,7 +73,7 @@ const Builder = (props) => {
     console.log("Refreshing Token");
     return new Promise((resolve, reject) => {
       axios
-        .post("http://localhost:5000/api/renewAccessToken", {
+        .post("http://localhost:8000/api/renewAccessToken", {
           token: refreshToken,
         })
         .then((data) => {
@@ -93,6 +93,8 @@ const Builder = (props) => {
     <Header
       responseSuccessGoogle={responseSuccessGoogle}
       responseErrorGoogle={responseErrorGoogle}
+      protect={protect}
+      err={err}
     />
   );
 };
