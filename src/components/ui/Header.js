@@ -55,7 +55,7 @@ const Header = (props) => {
                 Sign in
               </Button>
             )}
-            clientId="361577374258-c45jn6o7muma9cj62ptm5r7ivvtdfa8k.apps.googleusercontent.com"
+            clientId="361577374258-ljid0kudbrvdkmj6dhnfk56gtlap9kvh.apps.googleusercontent.com"
             buttonText="Login"
             onSuccess={props.responseSuccessGoogle}
             onFailure={props.responseErrorGoogle}

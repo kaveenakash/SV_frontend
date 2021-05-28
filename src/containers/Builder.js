@@ -9,7 +9,7 @@ const Builder = (props) => {
     console.log(response);
     axios({
       method: "POST",
-      url: "http://localhost:8000/api/googlelogin",
+      url: "https://socialvoices.herokuapp.com/api/googlelogin",
       data: {
         tokenId: response.tokenId,
       },
@@ -47,7 +47,7 @@ const Builder = (props) => {
     return new Promise((resolve, reject) => {
       axios
         .post(
-          "http://localhost:8000/api/protected",
+          "https://socialvoices.herokuapp.com/api/protected",
           {},
           { headers: { authorization: `Bearer ${accessToken}` } }
         )
@@ -73,7 +73,7 @@ const Builder = (props) => {
     console.log("Refreshing Token");
     return new Promise((resolve, reject) => {
       axios
-        .post("http://localhost:8000/api/renewAccessToken", {
+        .post("https://socialvoices.herokuapp.com/api/renewAccessToken", {
           token: refreshToken,
         })
         .then((data) => {

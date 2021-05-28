@@ -1,6 +1,7 @@
 {
   "name": "social_frontend",
   "version": "0.1.0",
+  "homepage": "https://myyoutubetools.com/",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.11.4",
